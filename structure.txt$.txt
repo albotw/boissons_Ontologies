@@ -1,0 +1,51 @@
+Alcool
+    AlcoolFort
+        Liqueur
+        Vin
+        Whisky
+        Vodka
+
+    AlcoolFaible
+
+SansAlcool
+    Jus
+    Sirop
+    Soda
+    Eau
+        Thé 
+        Café 
+
+Ingrédient
+    Fruit
+    Herbe
+    Graine
+    Legume
+
+Fermentation
+    AFroid
+    AChaud
+
+Consommation
+    Repas
+    Digestif
+
+Lieu
+    Bar
+    Supermarché
+
+Licence
+    classe1 (sans alcool)
+    classe3 (< 18%)
+    classe4 (> 18%)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Relations:
+
+ingredientOrigine: Boisson -> Ingredient
+processusFabrication: Boisson -> Fermentation
+peutVendre: Bar -> licence
+lieuVente: Lieu -> Boisson
+tempsConsommation: Boisson -> Consommation
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Attributs
+    degreAlcool
