@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-13"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-13">
+    <Prefix name="" IRI="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-13"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#ChoseTI"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Departement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DepartementInfo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DepartementMath"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DepartementMathAppli"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Employe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entreprise"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntrepriseImportante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntrepriseMixte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntreprisePetit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntrepriseToutInfo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntrepriseUnInfo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Extraterrestre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Homme"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Humain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Personne"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TonEntreprise"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UneEntreprise"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#appartient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#comporte"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#lie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#depar1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#depar2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ent1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#individu1"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#ChoseTI"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#comporte"/>
+            <Class IRI="#DepartementInfo"/>
+        </ObjectAllValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EntrepriseImportante"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Entreprise"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#comporte"/>
+                <Class IRI="#Departement"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EntrepriseMixte"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Entreprise"/>
+            <ObjectComplementOf>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#comporte"/>
+                    <Class IRI="#DepartementInfo"/>
+                </ObjectAllValuesFrom>
+            </ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#comporte"/>
+                <Class IRI="#DepartementInfo"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EntreprisePetit"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Entreprise"/>
+            <ObjectMaxCardinality cardinality="2">
+                <ObjectProperty IRI="#comporte"/>
+                <Class IRI="#Departement"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EntrepriseToutInfo"/>
+        <Class IRI="#UneEntreprise"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EntrepriseToutInfo"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Entreprise"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#comporte"/>
+                <Class IRI="#DepartementInfo"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EntrepriseUnInfo"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Entreprise"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#comporte"/>
+                <Class IRI="#DepartementInfo"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Extraterrestre"/>
+        <ObjectComplementOf>
+            <Class IRI="#Homme"/>
+        </ObjectComplementOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Homme"/>
+        <Class IRI="#Humain"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TonEntreprise"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#EntrepriseToutInfo"/>
+            <Class IRI="#EntrepriseUnInfo"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UneEntreprise"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ChoseTI"/>
+            <Class IRI="#Entreprise"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Departement"/>
+        <Class IRI="#ChoseTI"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Departement"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#lie"/>
+            <Class IRI="#Entreprise"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DepartementInfo"/>
+        <Class IRI="#Departement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DepartementMath"/>
+        <Class IRI="#Departement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DepartementMath"/>
+        <ObjectComplementOf>
+            <Class IRI="#DepartementInfo"/>
+        </ObjectComplementOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DepartementMathAppli"/>
+        <Class IRI="#DepartementMath"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Employe"/>
+        <Class IRI="#Personne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntrepriseMixte"/>
+        <Class IRI="#Entreprise"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntrepriseMixte"/>
+        <Class IRI="#EntrepriseUnInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntrepriseToutInfo"/>
+        <Class IRI="#ChoseTI"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntrepriseToutInfo"/>
+        <Class IRI="#Entreprise"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntrepriseUnInfo"/>
+        <Class IRI="#Entreprise"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TonEntreprise"/>
+        <Class IRI="#EntrepriseToutInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TonEntreprise"/>
+        <Class IRI="#EntrepriseUnInfo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TonEntreprise"/>
+        <Class IRI="#UneEntreprise"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UneEntreprise"/>
+        <Class IRI="#ChoseTI"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UneEntreprise"/>
+        <Class IRI="#Entreprise"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#ChoseTI"/>
+        <Class IRI="#EntrepriseMixte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Departement"/>
+        <Class IRI="#Entreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Departement"/>
+        <Class IRI="#EntrepriseMixte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Departement"/>
+        <Class IRI="#EntrepriseToutInfo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Departement"/>
+        <Class IRI="#EntrepriseUnInfo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Departement"/>
+        <Class IRI="#TonEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Departement"/>
+        <Class IRI="#UneEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementInfo"/>
+        <Class IRI="#DepartementMath"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementInfo"/>
+        <Class IRI="#DepartementMathAppli"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementInfo"/>
+        <Class IRI="#Entreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementInfo"/>
+        <Class IRI="#EntrepriseMixte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementInfo"/>
+        <Class IRI="#EntrepriseToutInfo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementInfo"/>
+        <Class IRI="#EntrepriseUnInfo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementInfo"/>
+        <Class IRI="#TonEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementInfo"/>
+        <Class IRI="#UneEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMath"/>
+        <Class IRI="#Entreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMath"/>
+        <Class IRI="#EntrepriseMixte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMath"/>
+        <Class IRI="#EntrepriseToutInfo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMath"/>
+        <Class IRI="#EntrepriseUnInfo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMath"/>
+        <Class IRI="#TonEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMath"/>
+        <Class IRI="#UneEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMathAppli"/>
+        <Class IRI="#Entreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMathAppli"/>
+        <Class IRI="#EntrepriseMixte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMathAppli"/>
+        <Class IRI="#EntrepriseToutInfo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMathAppli"/>
+        <Class IRI="#EntrepriseUnInfo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMathAppli"/>
+        <Class IRI="#TonEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DepartementMathAppli"/>
+        <Class IRI="#UneEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EntrepriseMixte"/>
+        <Class IRI="#EntrepriseToutInfo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EntrepriseMixte"/>
+        <Class IRI="#TonEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EntrepriseMixte"/>
+        <Class IRI="#UneEntreprise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Extraterrestre"/>
+        <Class IRI="#Homme"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Extraterrestre"/>
+        <Class IRI="#Humain"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#DepartementInfo"/>
+        <NamedIndividual IRI="#depar1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Departement"/>
+        <NamedIndividual IRI="#depar2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Entreprise"/>
+        <NamedIndividual IRI="#ent1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectMaxCardinality cardinality="2">
+            <ObjectProperty IRI="#comporte"/>
+            <Class IRI="#Departement"/>
+        </ObjectMaxCardinality>
+        <NamedIndividual IRI="#ent1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#individu1"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#depar1"/>
+        <NamedIndividual IRI="#depar2"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comporte"/>
+        <NamedIndividual IRI="#ent1"/>
+        <NamedIndividual IRI="#depar1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comporte"/>
+        <NamedIndividual IRI="#ent1"/>
+        <NamedIndividual IRI="#depar2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#appartient"/>
+        <NamedIndividual IRI="#individu1"/>
+        <NamedIndividual IRI="#depar1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#appartient"/>
+        <Class IRI="#Employe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#comporte"/>
+        <Class IRI="#Entreprise"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#lie"/>
+        <Class IRI="#Departement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#appartient"/>
+        <Class IRI="#Departement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#comporte"/>
+        <Class IRI="#Departement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#lie"/>
+        <Class IRI="#Entreprise"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

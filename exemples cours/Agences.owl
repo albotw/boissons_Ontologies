@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-4"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-4">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Agence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Societe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Voiture"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#AgArrivee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#AgDepart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Comporte"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Concerne"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Gere"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Possede"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Agence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Gere"/>
+            <Class IRI="#Voiture"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Reservation"/>
+        <ObjectIntersectionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#AgArrivee"/>
+                <Class IRI="#Agence"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#AgDepart"/>
+                <Class IRI="#Agence"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#Concerne"/>
+                <Class IRI="#Voiture"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Societe"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#Comporte"/>
+                <Class IRI="#Agence"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#Gere"/>
+                <Class IRI="#Voiture"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#Possede"/>
+                <Class IRI="#Voiture"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Societe"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#Comporte"/>
+                <Class IRI="#Agence"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#Possede"/>
+                <Class IRI="#Voiture"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <DisjointClasses>
+        <Class IRI="#Agence"/>
+        <Class IRI="#Reservation"/>
+        <Class IRI="#Societe"/>
+        <Class IRI="#Voiture"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#AgArrivee"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#AgDepart"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#AgArrivee"/>
+        <Class IRI="#Reservation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#AgDepart"/>
+        <Class IRI="#Reservation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Comporte"/>
+        <Class IRI="#Societe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Concerne"/>
+        <Class IRI="#Reservation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Gere"/>
+        <Class IRI="#Agence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Possede"/>
+        <Class IRI="#Societe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#AgArrivee"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#AgDepart"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Comporte"/>
+        <Class IRI="#Agence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Concerne"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Gere"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Possede"/>
+        <Class IRI="#Voiture"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-10"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-10">
+    <Prefix name="" IRI="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-10"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Chercheur"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conseil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnseignantChercheur"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnseignantChercheurActif"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GrandConseil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IATOSS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Personne"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Participe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#est_preside_par"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#c1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#c2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#c3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cs1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cs2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ec1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ec2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ec3"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#EnseignantChercheurActif"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#EnseignantChercheur"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#Participe"/>
+                <Class IRI="#Conseil"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#GrandConseil"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Conseil"/>
+            <ObjectMinCardinality cardinality="10">
+                <ObjectInverseOf>
+                    <ObjectProperty IRI="#Participe"/>
+                </ObjectInverseOf>
+                <Class IRI="#Personne"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Chercheur"/>
+        <Class IRI="#Personne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conseil"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#est_preside_par"/>
+            <Class IRI="#Personne"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conseil"/>
+        <ObjectMaxCardinality cardinality="3">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#Participe"/>
+            </ObjectInverseOf>
+            <Class IRI="#Personne"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnseignantChercheur"/>
+        <Class IRI="#Personne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IATOSS"/>
+        <Class IRI="#Personne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Personne"/>
+        <ObjectMaxCardinality cardinality="3">
+            <ObjectProperty IRI="#Participe"/>
+            <Class IRI="#Conseil"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Personne"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#est_preside_par"/>
+            </ObjectInverseOf>
+            <Class IRI="#Personne"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Chercheur"/>
+        <Class IRI="#EnseignantChercheur"/>
+        <Class IRI="#IATOSS"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Conseil"/>
+        <Class IRI="#Personne"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Conseil"/>
+        <NamedIndividual IRI="#c1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Conseil"/>
+        <NamedIndividual IRI="#c2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Conseil"/>
+        <NamedIndividual IRI="#c3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Chercheur"/>
+        <NamedIndividual IRI="#cs1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Chercheur"/>
+        <NamedIndividual IRI="#cs2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EnseignantChercheur"/>
+        <NamedIndividual IRI="#ec1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EnseignantChercheur"/>
+        <NamedIndividual IRI="#ec2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EnseignantChercheur"/>
+        <NamedIndividual IRI="#ec3"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#est_preside_par"/>
+        <NamedIndividual IRI="#c1"/>
+        <NamedIndividual IRI="#ec2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#est_preside_par"/>
+        <NamedIndividual IRI="#c2"/>
+        <NamedIndividual IRI="#ec1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Participe"/>
+        <NamedIndividual IRI="#cs1"/>
+        <NamedIndividual IRI="#c1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Participe"/>
+        <Class IRI="#Personne"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#est_preside_par"/>
+        <Class IRI="#Conseil"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Participe"/>
+        <Class IRI="#Conseil"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#est_preside_par"/>
+        <Class IRI="#Personne"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

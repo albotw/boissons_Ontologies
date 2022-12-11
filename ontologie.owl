@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/yann/ontologies/2022/11/untitled-ontology-5"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/yann/ontologies/2022/11/untitled-ontology-5">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#ALaCarte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Adulte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Boisson"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dessert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DessertEco"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DessertEnfant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Enfant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntreEco"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntreeEnfant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Etudiant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Menu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MenuClassique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MenuEnfant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MenuEtudiant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MenuMidi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nourriture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Personne"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PetitDejeuner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlatEco"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlatEnfant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlatPrincipal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Prix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrixReduit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrixStandard"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#choisi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#commandé_par"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#coute"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#disponible_dans"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/TR/2003/CR-owl-guide-20030818/food#Dessert"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#DessertEco"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#coute"/>
+                <Class IRI="#PrixReduit"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#disponible_dans"/>
+                <Class IRI="#MenuEtudiant"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Etudiant"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#choisi"/>
+                <Class IRI="#DessertEco"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#choisi"/>
+                <Class IRI="#EntreEco"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#choisi"/>
+                <Class IRI="#PlatEco"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Menu"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#disponible_dans"/>
+            </ObjectInverseOf>
+            <Class IRI="#PlatPrincipal"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MenuEnfant"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#commandé_par"/>
+            <Class IRI="#Enfant"/>
+        </ObjectAllValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MenuEtudiant"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#commandé_par"/>
+            <Class IRI="#Etudiant"/>
+        </ObjectAllValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MenuMidi"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty IRI="#disponible_dans"/>
+                </ObjectInverseOf>
+                <Class IRI="#Entree"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty IRI="#disponible_dans"/>
+                </ObjectInverseOf>
+                <Class IRI="http://www.w3.org/TR/2003/CR-owl-guide-20030818/food#Dessert"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlatEco"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#coute"/>
+                <Class IRI="#PrixReduit"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#disponible_dans"/>
+                <Class IRI="#MenuEtudiant"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlatEnfant"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#disponible_dans"/>
+            <Class IRI="#MenuEnfant"/>
+        </ObjectAllValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#ALaCarte"/>
+        <Class IRI="#Menu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Adulte"/>
+        <Class IRI="#Personne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Boisson"/>
+        <Class IRI="#Nourriture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dessert"/>
+        <Class IRI="#Nourriture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DessertEco"/>
+        <Class IRI="#Dessert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DessertEnfant"/>
+        <Class IRI="#Dessert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Enfant"/>
+        <Class IRI="#Personne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntreEco"/>
+        <Class IRI="#Entree"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Entree"/>
+        <Class IRI="#Nourriture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntreeEnfant"/>
+        <Class IRI="#Entree"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Etudiant"/>
+        <Class IRI="#Adulte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MenuClassique"/>
+        <Class IRI="#Menu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MenuEnfant"/>
+        <Class IRI="#Menu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MenuEtudiant"/>
+        <Class IRI="#Menu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MenuMidi"/>
+        <Class IRI="#Menu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PetitDejeuner"/>
+        <Class IRI="#Menu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlatEco"/>
+        <Class IRI="#PlatPrincipal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlatEnfant"/>
+        <Class IRI="#PlatPrincipal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlatPrincipal"/>
+        <Class IRI="#Nourriture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrixReduit"/>
+        <Class IRI="#Prix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrixStandard"/>
+        <Class IRI="#Prix"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#choisi"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#commandé_par"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#coute"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#choisi"/>
+        <Class IRI="#Personne"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#commandé_par"/>
+        <Class IRI="#Personne"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#coute"/>
+        <Class IRI="#Prix"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <Class IRI="#Menu"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#choisi"/>
+        <Class IRI="#Nourriture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#commandé_par"/>
+        <Class IRI="#Menu"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#coute"/>
+        <Class IRI="#Nourriture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <Class IRI="#Nourriture"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

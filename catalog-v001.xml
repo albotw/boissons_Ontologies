@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1670598654742" name="http://swrl.stanford.edu/ontologies/examples/family.swrl.owl" uri="family.swrl.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1670598654742" name="duplicate:http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-10" uri="UFR.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1670598654742" name="duplicate:http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-10" uri="UFR_SPQL.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1670598654742" name="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-13" uri="entreprise.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1670598654742" name="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-4" uri="Agences.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1670598654742" name="http://www.semanticweb.org/yt646712/ontologies/2022/9/untitled-ontology-7" uri="etudiant_sport.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1670598654742" name="http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine" uri="wine.owl"/>
+    </group>
+</catalog>

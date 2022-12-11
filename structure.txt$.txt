@@ -49,3 +49,18 @@ tempsConsommation: Boisson -> Consommation
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 Attributs
     degreAlcool
+
+
+========================================================================
+
+Inverser object properties sauf choisi
+Valider des  menus et des plats
+Une personne choisit de la nouriture et un menu 
+-> on valide ses choix
+
+Un menu possède plusieurs entrées, plats et desserts
+Une personne ne peut choisir que parmi les entrées disponibles dans un menu spécifique.
+
+Etudiant choisit que de la nourriture qui coute PrixRéduit
+Adulte a le choix pour tous les menus
+Enfant ne doit prendre que la nourriture 
