@@ -6,16 +6,17 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/yann/ontologies/2022/11/untitled-ontology-5">
+    <Prefix name="" IRI="http://www.semanticweb.org/yann/ontologies/2022/11/untitled-ontology-5"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <Class IRI="#ALaCarte"/>
+        <Class IRI="#Adulte"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Adulte"/>
+        <Class IRI="#AvecAlcool"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Boisson"/>
@@ -48,25 +49,22 @@
         <Class IRI="#Menu"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MenuClassique"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#MenuEnfant"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MenuEtudiant"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MenuMidi"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Nourriture"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Personne"/>
+        <Class IRI="#NourritureEco"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PetitDejeuner"/>
+        <Class IRI="#NourritureEnfant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Personne"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PlatEco"/>
@@ -87,6 +85,9 @@
         <Class IRI="#PrixStandard"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SansAlcool"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#choisi"/>
     </Declaration>
     <Declaration>
@@ -99,11 +100,129 @@
         <ObjectProperty IRI="#disponible_dans"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.w3.org/TR/2003/CR-owl-guide-20030818/food#Dessert"/>
+        <DataProperty IRI="#age"/>
     </Declaration>
-    <EquivalentClasses>
+    <Declaration>
+        <DataProperty IRI="#genre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BoeufBourguignon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dame_Blanche"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Justin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mafé"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Menu1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MenuEnfant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MenuEtudiant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Milkshake"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Omelette"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pates"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RéductionEtudiant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Salade"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Spaghetti"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SteakFrites"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Wassim"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Yann"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Adulte"/>
+        <Class IRI="#Personne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AvecAlcool"/>
+        <Class IRI="#Boisson"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AvecAlcool"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#commandé_par"/>
+            <Class IRI="#Adulte"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Boisson"/>
+        <Class IRI="#Nourriture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dessert"/>
+        <Class IRI="#Nourriture"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#DessertEco"/>
+        <Class IRI="#Dessert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DessertEco"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#coute"/>
+            <Class IRI="#PrixReduit"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DessertEco"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#disponible_dans"/>
+            <Class IRI="#MenuEtudiant"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DessertEnfant"/>
+        <Class IRI="#Dessert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DessertEnfant"/>
         <ObjectIntersectionOf>
+            <Class IRI="#Dessert"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#disponible_dans"/>
+                <Class IRI="#MenuEnfant"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Enfant"/>
+        <Class IRI="#Personne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntreEco"/>
+        <Class IRI="#Entree"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntreEco"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Entree"/>
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#coute"/>
                 <Class IRI="#PrixReduit"/>
@@ -113,25 +232,44 @@
                 <Class IRI="#MenuEtudiant"/>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#Etudiant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Entree"/>
+        <Class IRI="#Nourriture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntreeEnfant"/>
+        <Class IRI="#Entree"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntreeEnfant"/>
         <ObjectIntersectionOf>
+            <Class IRI="#Entree"/>
             <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#choisi"/>
-                <Class IRI="#DessertEco"/>
-            </ObjectAllValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#choisi"/>
-                <Class IRI="#EntreEco"/>
-            </ObjectAllValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#choisi"/>
-                <Class IRI="#PlatEco"/>
+                <ObjectProperty IRI="#disponible_dans"/>
+                <Class IRI="#MenuEnfant"/>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Etudiant"/>
+        <Class IRI="#Adulte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Etudiant"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#choisi"/>
+            <Class IRI="#NourritureEco"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Menu"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#commandé_par"/>
+            <Class IRI="#Personne"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Menu"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectInverseOf>
@@ -139,41 +277,44 @@
             </ObjectInverseOf>
             <Class IRI="#PlatPrincipal"/>
         </ObjectMinCardinality>
-    </EquivalentClasses>
-    <EquivalentClasses>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MenuEnfant"/>
+        <Class IRI="#Menu"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#MenuEnfant"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#commandé_par"/>
             <Class IRI="#Enfant"/>
         </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MenuEtudiant"/>
+        <Class IRI="#Menu"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#MenuEtudiant"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#commandé_par"/>
             <Class IRI="#Etudiant"/>
         </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#MenuMidi"/>
-        <ObjectUnionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectInverseOf>
-                    <ObjectProperty IRI="#disponible_dans"/>
-                </ObjectInverseOf>
-                <Class IRI="#Entree"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectInverseOf>
-                    <ObjectProperty IRI="#disponible_dans"/>
-                </ObjectInverseOf>
-                <Class IRI="http://www.w3.org/TR/2003/CR-owl-guide-20030818/food#Dessert"/>
-            </ObjectSomeValuesFrom>
-        </ObjectUnionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nourriture"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#disponible_dans"/>
+            <Class IRI="#Menu"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlatEco"/>
+        <Class IRI="#PlatPrincipal"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PlatEco"/>
         <ObjectIntersectionOf>
+            <Class IRI="#PlatPrincipal"/>
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#coute"/>
                 <Class IRI="#PrixReduit"/>
@@ -183,85 +324,20 @@
                 <Class IRI="#MenuEtudiant"/>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#PlatEnfant"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#disponible_dans"/>
-            <Class IRI="#MenuEnfant"/>
-        </ObjectAllValuesFrom>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class IRI="#ALaCarte"/>
-        <Class IRI="#Menu"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Adulte"/>
-        <Class IRI="#Personne"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Boisson"/>
-        <Class IRI="#Nourriture"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Dessert"/>
-        <Class IRI="#Nourriture"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DessertEco"/>
-        <Class IRI="#Dessert"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DessertEnfant"/>
-        <Class IRI="#Dessert"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Enfant"/>
-        <Class IRI="#Personne"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EntreEco"/>
-        <Class IRI="#Entree"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Entree"/>
-        <Class IRI="#Nourriture"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EntreeEnfant"/>
-        <Class IRI="#Entree"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Etudiant"/>
-        <Class IRI="#Adulte"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MenuClassique"/>
-        <Class IRI="#Menu"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MenuEnfant"/>
-        <Class IRI="#Menu"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MenuEtudiant"/>
-        <Class IRI="#Menu"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MenuMidi"/>
-        <Class IRI="#Menu"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PetitDejeuner"/>
-        <Class IRI="#Menu"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PlatEco"/>
-        <Class IRI="#PlatPrincipal"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PlatEnfant"/>
         <Class IRI="#PlatPrincipal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlatEnfant"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PlatPrincipal"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#disponible_dans"/>
+                <Class IRI="#MenuEnfant"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PlatPrincipal"/>
@@ -275,6 +351,180 @@
         <Class IRI="#PrixStandard"/>
         <Class IRI="#Prix"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SansAlcool"/>
+        <Class IRI="#Boisson"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Adulte"/>
+        <Class IRI="#Enfant"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Boisson"/>
+        <Class IRI="#Dessert"/>
+        <Class IRI="#Entree"/>
+        <Class IRI="#PlatPrincipal"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DessertEco"/>
+        <Class IRI="#DessertEnfant"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EntreEco"/>
+        <Class IRI="#EntreeEnfant"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Menu"/>
+        <Class IRI="#Nourriture"/>
+        <Class IRI="#Personne"/>
+        <Class IRI="#Prix"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PlatEco"/>
+        <Class IRI="#PlatEnfant"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PrixReduit"/>
+        <Class IRI="#PrixStandard"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="#NourritureEco"/>
+        <Class IRI="#DessertEco"/>
+        <Class IRI="#EntreEco"/>
+        <Class IRI="#PlatEco"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#NourritureEnfant"/>
+        <Class IRI="#DessertEnfant"/>
+        <Class IRI="#EntreeEnfant"/>
+        <Class IRI="#PlatEnfant"/>
+    </DisjointUnion>
+    <ClassAssertion>
+        <Class IRI="#PlatPrincipal"/>
+        <NamedIndividual IRI="#BoeufBourguignon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dessert"/>
+        <NamedIndividual IRI="#Dame_Blanche"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Personne"/>
+        <NamedIndividual IRI="#Justin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Entree"/>
+        <NamedIndividual IRI="#Mafé"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MenuEnfant"/>
+        <NamedIndividual IRI="#MenuEnfant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MenuEtudiant"/>
+        <NamedIndividual IRI="#MenuEtudiant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Dessert"/>
+        <NamedIndividual IRI="#Milkshake"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlatPrincipal"/>
+        <NamedIndividual IRI="#Omelette"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PrixReduit"/>
+        <NamedIndividual IRI="#RéductionEtudiant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Entree"/>
+        <NamedIndividual IRI="#Salade"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlatPrincipal"/>
+        <NamedIndividual IRI="#Spaghetti"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlatEco"/>
+        <NamedIndividual IRI="#SteakFrites"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Personne"/>
+        <NamedIndividual IRI="#Wassim"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Personne"/>
+        <NamedIndividual IRI="#Yann"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <NamedIndividual IRI="#BoeufBourguignon"/>
+        <NamedIndividual IRI="#Menu1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <NamedIndividual IRI="#Dame_Blanche"/>
+        <NamedIndividual IRI="#Menu1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#choisi"/>
+        <NamedIndividual IRI="#Justin"/>
+        <NamedIndividual IRI="#BoeufBourguignon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#choisi"/>
+        <NamedIndividual IRI="#Justin"/>
+        <NamedIndividual IRI="#Salade"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <NamedIndividual IRI="#Mafé"/>
+        <NamedIndividual IRI="#Menu1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#commandé_par"/>
+        <NamedIndividual IRI="#MenuEtudiant"/>
+        <NamedIndividual IRI="#Wassim"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <NamedIndividual IRI="#Milkshake"/>
+        <NamedIndividual IRI="#Menu1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <NamedIndividual IRI="#Omelette"/>
+        <NamedIndividual IRI="#Menu1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <NamedIndividual IRI="#Salade"/>
+        <NamedIndividual IRI="#Menu1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#choisi"/>
+        <NamedIndividual IRI="#Wassim"/>
+        <NamedIndividual IRI="#SteakFrites"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#choisi"/>
+        <NamedIndividual IRI="#Yann"/>
+        <NamedIndividual IRI="#Pates"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#age"/>
+        <NamedIndividual IRI="#Justin"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#age"/>
+        <NamedIndividual IRI="#Wassim"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#age"/>
+        <NamedIndividual IRI="#Yann"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">15</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#choisi"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -297,32 +547,136 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#commandé_par"/>
-        <Class IRI="#Personne"/>
+        <Class IRI="#Menu"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#coute"/>
+        <Class IRI="#Nourriture"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#disponible_dans"/>
+        <Class IRI="#Nourriture"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#choisi"/>
+        <Class IRI="#Nourriture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#commandé_par"/>
+        <Class IRI="#Personne"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#coute"/>
         <Class IRI="#Prix"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#disponible_dans"/>
         <Class IRI="#Menu"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
+    </ObjectPropertyRange>
+    <DisjointObjectProperties>
         <ObjectProperty IRI="#choisi"/>
-        <Class IRI="#Nourriture"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#commandé_par"/>
-        <Class IRI="#Menu"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#coute"/>
-        <Class IRI="#Nourriture"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#disponible_dans"/>
-        <Class IRI="#Nourriture"/>
-    </ObjectPropertyRange>
+    </DisjointObjectProperties>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#age"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#genre"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#age"/>
+        <Class IRI="#Personne"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#genre"/>
+        <Class IRI="#Personne"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#age"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#genre"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>VerifMajeur</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Personne"/>
+                <Variable IRI="#x"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#age"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#a"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual">
+                <Variable IRI="#a"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">18</Literal>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#Adulte"/>
+                <Variable IRI="#x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>VerifMineur</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Personne"/>
+                <Variable IRI="#x"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#age"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#a"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#lessThan">
+                <Variable IRI="#a"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">18</Literal>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#Enfant"/>
+                <Variable IRI="#x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
 </Ontology>
 
 

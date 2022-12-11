@@ -61,6 +61,8 @@ Une personne choisit de la nouriture et un menu
 Un menu possède plusieurs entrées, plats et desserts
 Une personne ne peut choisir que parmi les entrées disponibles dans un menu spécifique.
 
-Etudiant choisit que de la nourriture qui coute PrixRéduit
-Adulte a le choix pour tous les menus
-Enfant ne doit prendre que la nourriture 
+- Etudiant choisit que de la nourriture qui coute PrixRéduit
+- Adulte a le choix pour tous les menus
+- Enfant ne doit prendre que la nourriture enfant et un menu enfant
+- Un menu propose plusieurs plats disponibles
+- Un menu comporte au moins un plat principal
